@@ -1,0 +1,338 @@
+:root {
+    --navy-900: #0B2545;
+    --navy-800: #0F2E54;
+    --blue-accent: #2E7BE0;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+}
+
+/* Modifiers for body */
+body.bg-light {
+    background-image: linear-gradient(135deg, rgba(244,246,250, 0.95) 0%, rgba(244,246,250, 0.85) 100%), url('../images/auth_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+body.layout-split {
+    display: flex;
+}
+body.layout-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Parallax background initialization */
+body.bg-light,
+body.auth-bg,
+.side-art {
+    background-position: 50% 50%;
+    transition: background-position 0.1s ease;
+}
+    background-image: linear-gradient(135deg, rgba(11,37,69, 0.85) 0%, rgba(15,46,84, 0.75) 55%, rgba(22,59,104, 0.7) 100%), url('../images/auth_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+body.auth-bg::after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,123,224,.35), transparent 70%);
+}
+
+/* Common form elements */
+.form-group {
+    margin-bottom: 16px;
+}
+.form-label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 6px;
+}
+.form-control {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #E3E8EF;
+    border-radius: 9px;
+    font-size: 13.5px;
+    font-family: inherit;
+    background: #F9FAFC;
+    transition: all 0.3s ease;
+}
+.form-control:focus {
+    outline: none;
+    background: #fff;
+    border-color: var(--blue-accent);
+    box-shadow: 0 0 0 4px rgba(46,123,224,.15);
+}
+.btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, var(--blue-accent), #163B68);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    margin-top: 6px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46, 123, 224, 0.4);
+}
+.alt-link {
+    text-align: center;
+    font-size: 12.5px;
+    color: #5B6478;
+    margin-top: 18px;
+}
+.alt-link a {
+    color: var(--blue-accent);
+    font-weight: 600;
+}
+.alert-danger {
+    background: #FCEAEA;
+    color: #B23A3A;
+    padding: 11px 14px;
+    border-radius: 9px;
+    font-size: 12.5px;
+    margin-bottom: 16px;
+}
+.alert-success {
+    background: #E6F4EA;
+    color: #1E7B34;
+    padding: 11px 14px;
+    border-radius: 9px;
+    font-size: 12.5px;
+    margin-bottom: 16px;
+}
+.role-switch {
+    display: flex;
+    gap: 8px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #E3E8EF;
+}
+.role-switch a {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    padding: 8px;
+    border: 1px solid #E3E8EF;
+    border-radius: 8px;
+    color: #5B6478;
+    font-weight: 600;
+}
+
+/* --- Warga Register Specific --- */
+.top-strip {
+    background: linear-gradient(135deg, var(--navy-900), #163B68);
+    padding: 22px 0;
+    text-align: center;
+}
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    position: relative;
+    /* subtle logo hover */
+    transition: transform 0.3s ease;
+}
+.brand:hover {
+    transform: translateY(-3px);
+}
+.brand-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    overflow: hidden;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease;
+}
+.brand-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.brand-mark:hover img {
+    transform: scale(1.08);
+}
+.brand-text {
+    font-size: 14.5px;
+    font-weight: 600;
+    text-align: left;
+}
+.brand-text span {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #9FB6D9;
+}
+.wrap {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 36px 20px 60px;
+}
+.form-card.register-card {
+    background: #fff;
+    border: 1px solid #E3E8EF;
+    border-radius: 16px;
+    padding: 32px;
+}
+.form-card.register-card h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    color: var(--navy-900);
+}
+.form-card.register-card .sub {
+    font-size: 13px;
+    color: #5B6478;
+    margin: 0 0 24px;
+}
+.form-card.register-card .btn-primary {
+    padding: 13px;
+    margin-top: 8px;
+}
+.form-card.register-card .form-control {
+    padding: 10px 13px;
+}
+.form-card.register-card .alert-danger {
+    padding: 12px 14px;
+    margin-bottom: 18px;
+}
+.form-card.register-card .alert-danger div {
+    margin-bottom: 3px;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+.req {
+    color: #B23A3A;
+}
+textarea.form-control {
+    resize: vertical;
+    min-height: 64px;
+}
+
+/* --- Warga Login Specific --- */
+.side-art {
+    flex: 1;
+    background-image: linear-gradient(135deg, rgba(11,37,69, 0.85) 0%, rgba(15,46,84, 0.75) 55%, rgba(22,59,104, 0.7) 100%), url('../images/auth_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+.side-art::after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    bottom: -100px;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,123,224,.35), transparent 70%);
+}
+.side-art h2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.35;
+    max-width: 380px;
+    position: relative;
+    margin: 0;
+}
+.side-art p {
+    font-size: 13.5px;
+    color: #C7D5EA;
+    max-width: 360px;
+    line-height: 1.6;
+    position: relative;
+}
+.form-side {
+    width: 460px;
+    min-width: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F4F6FA;
+    padding: 40px;
+}
+.form-card.warga-card {
+    width: 100%;
+    max-width: 360px;
+}
+.form-card.warga-card h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: var(--navy-900);
+}
+.form-card.warga-card .sub {
+    font-size: 13px;
+    color: #5B6478;
+    margin: 0 0 28px;
+}
+
+/* --- Admin/Petugas Login Specific --- */
+.form-card.admin-card {
+    width: 100%;
+    max-width: 380px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 34px;
+    position: relative;
+}
+.form-card.admin-card h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    color: var(--navy-900);
+}
+.form-card.admin-card .sub {
+    font-size: 13px;
+    color: #5B6478;
+    margin: 0 0 24px;
+}
+.icon-top {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #E8F0FC;
+    color: #1B4F8C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 18px;
+}

@@ -25,16 +25,19 @@ class PengaduanController extends Controller
     public function validasi(Request $request, $id)
     {
         $request->validate([
-            'status' => 'required|in:diverifikasi,ditolak',
-            'id_petugas' => 'nullable|exists:petugas,id_petugas',
+            'status'       => 'required|in:diverifikasi,ditolak,selesai',
+            'id_petugas'   => 'nullable|exists:petugas,id_petugas',
+            'catatan_admin'=> 'nullable|string|max:1000',
         ]);
 
         $pengaduan = Pengaduan::findOrFail($id);
         $pengaduan->update([
-            'status' => $request->status,
-            'id_petugas' => $request->id_petugas,
+            'status'        => $request->status,
+            'id_petugas'    => $request->id_petugas,
+            'catatan_admin' => $request->catatan_admin,
         ]);
 
-        return redirect()->route('admin.pengaduan.index')->with('success', 'Status pengaduan berhasil diupdate.');
+        return redirect()->route('admin.pengaduan.detail', $id)
+                         ->with('success', 'Validasi berhasil disimpan.');
     }
 }

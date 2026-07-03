@@ -7,71 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/dist/tabler-icons.min.css">
-    <style>
-        :root{ --navy-900:#0B2545; --navy-800:#0F2E54; --blue-accent:#2E7BE0; }
-        *{box-sizing:border-box;}
-        body{margin:0; font-family:'Plus Jakarta Sans',sans-serif; background:#F4F6FA; color:#0B2545;}
-        a{text-decoration:none; color:inherit;}
-        .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 64px; background:var(--navy-900);}
-        .brand{display:flex; align-items:center; gap:11px;}
-        .brand-mark{width:38px; height:38px; border-radius:9px; background:rgba(255,255,255,.12); display:flex; align-items:center; justify-content:center; color:#BFD7FF; font-size:18px;}
-        .brand-text{color:#fff; font-size:14.5px; font-weight:600;}
-        .brand-text span{display:block; font-size:11.5px; font-weight:400; color:#9FB6D9;}
-        .nav-links{display:flex; gap:10px;}
-        .nav-btn{font-size:13.5px; padding:9px 18px; border-radius:8px; font-weight:600; border:1px solid rgba(255,255,255,.25); color:#fff;}
-        .nav-btn.solid{background:#fff; color:var(--navy-900); border:none;}
-        .hero{padding:72px 64px 56px; position:relative; overflow:hidden; background-image:linear-gradient(135deg, rgba(11,37,69,.55) 0%, rgba(15,46,84,.45) 55%, rgba(22,59,104,.40) 100%), url('{{ asset('images/hero-kelurahan.jpg') }}'); background-size:cover; background-position:center;}
-        .hero::after{content:""; position:absolute; right:-80px; top:-80px; width:380px; height:380px; border-radius:50%; background:radial-gradient(circle, rgba(46,123,224,.25), transparent 70%);}
-        .eyebrow{display:inline-flex; align-items:center; gap:7px; font-size:12.5px; color:#BFD7FF; background:rgba(255,255,255,.1); padding:6px 14px; border-radius:20px; margin-bottom:20px;}
-        .hero h1{font-size:38px; font-weight:700; color:#fff; line-height:1.25; margin:0 0 16px; max-width:560px; position:relative; text-shadow:0 2px 12px rgba(0,0,0,.45);}
-        .hero p{font-size:15.5px; color:#E8EEF8; max-width:480px; line-height:1.65; margin:0 0 28px; position:relative; text-shadow:0 1px 8px rgba(0,0,0,.4);}
-        .hero-actions{display:flex; gap:12px; position:relative;}
-        .btn-primary{background:linear-gradient(135deg,var(--blue-accent),#163B68); color:#fff; border:none; padding:13px 24px; border-radius:10px; font-size:14.5px; font-weight:600; display:inline-flex; align-items:center; gap:8px;}
-        .btn-secondary{background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.25); padding:13px 24px; border-radius:10px; font-size:14.5px; font-weight:600;}
-        .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,.12); margin-top:44px; border-radius:14px; overflow:hidden; max-width:640px; position:relative;}
-        .stat{background:rgba(255,255,255,.06); padding:20px 22px;}
-        .stat .num{font-size:25px; font-weight:700; color:#fff;}
-        .stat .label{font-size:12px; color:#9FB6D9; margin-top:3px;}
-        .section{padding:56px 64px;}
-        .section-head{margin-bottom:28px;}
-        .section-head h2{font-size:21px; font-weight:700; margin:0 0 6px;}
-        .section-head p{font-size:13.5px; color:#5B6478; margin:0;}
-        .cat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
-        .cat-card{background:#fff; border:1px solid #E3E8EF; border-radius:14px; padding:20px;}
-        .cat-icon{width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; font-size:19px;}
-        .ic-rusak{background:#F0997B33; color:#993C1D;}
-        .ic-lampu{background:#FAC77555; color:#854F0B;}
-        .ic-sampah{background:#97C45955; color:#27500A;}
-        .ic-air{background:#85B7EB44; color:#0C447C;}
-        .cat-card h3{font-size:14.5px; font-weight:600; margin:0 0 5px;}
-        .cat-card p{font-size:12.5px; color:#5B6478; margin:0; line-height:1.5;}
-        .flow{background:linear-gradient(135deg,var(--navy-900),#163B68); padding:56px 64px;}
-        .flow h2{color:#fff; font-size:21px; font-weight:700; margin:0 0 6px;}
-        .flow p.sub{color:#9FB6D9; font-size:13.5px; margin:0 0 28px;}
-        .flow-steps{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
-        .flow-step{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:13px; padding:20px;}
-        .flow-num{width:30px; height:30px; border-radius:50%; background:var(--blue-accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; margin-bottom:14px;}
-        .flow-step p{font-size:13px; color:#E8F2EA; margin:0; line-height:1.5;}
-        .howto{padding:56px 64px; background:#fff;}
-        .howto-list{display:flex; flex-direction:column; gap:0;}
-        .howto-item{display:flex; gap:22px; padding:26px 0; border-bottom:1px solid #E3E8EF;}
-        .howto-item:last-child{border-bottom:none;}
-        .howto-num{width:46px; height:46px; min-width:46px; border-radius:12px; background:#E8F0FC; color:#1B4F8C; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:700;}
-        .howto-body h3{font-size:15.5px; font-weight:700; margin:0 0 6px; color:var(--navy-900); display:flex; align-items:center; gap:8px;}
-        .howto-body h3 i{font-size:17px; color:var(--blue-accent);}
-        .howto-body p{font-size:13.5px; color:#5B6478; margin:0 0 8px; line-height:1.6; max-width:560px;}
-        .howto-note{display:inline-flex; align-items:center; gap:6px; font-size:12px; color:#854F0B; background:#FAEEDA; padding:5px 12px; border-radius:7px;}
-        .howto-note.ok{color:#1E7B34; background:#E6F4EA;}
-        .howto-cta{margin-top:30px; background:#F4F6FA; border-radius:14px; padding:22px 26px; display:flex; align-items:center; justify-content:space-between;}
-        .howto-cta p{margin:0; font-size:13.5px; color:#5B6478;}
-        .howto-cta strong{display:block; font-size:15px; color:var(--navy-900); margin-bottom:3px;}
-        .foot{text-align:center; padding:22px; font-size:12px; color:#8A92A3; background:#fff; border-top:1px solid #E3E8EF;}
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 </head>
 <body>
     <div class="nav">
         <div class="brand">
-            <div class="brand-mark"><i class="ti ti-building-bank"></i></div>
+            <img src="{{ asset('images/logo-kelurahan.jpg') }}" alt="Logo Sumberarum" style="width: 38px; height: 38px; border-radius: 9px; object-fit: cover; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
             <div class="brand-text">E-Lapor Sumberarum<span>Kalurahan Sumberarum</span></div>
         </div>
         <div class="nav-links">
@@ -103,24 +44,32 @@
         </div>
         <div class="cat-grid">
             <div class="cat-card">
-                <div class="cat-icon ic-rusak"><i class="ti ti-road"></i></div>
-                <h3>Jalan rusak</h3>
-                <p>Lubang, retak, atau kerusakan jalan di lingkungan warga</p>
+                <div class="img-wrap"><img src="{{ asset('images/cat_jalan.png') }}" alt="Infrastruktur Jalan" class="cat-img"></div>
+                <div class="cat-body">
+                    <h3>Infrastruktur Jalan</h3>
+                    <p>Laporan mengenai jalan berlubang, aspal mengelupas, atau kerusakan akses jalan lainnya.</p>
+                </div>
             </div>
             <div class="cat-card">
-                <div class="cat-icon ic-lampu"><i class="ti ti-bulb"></i></div>
-                <h3>Lampu jalan mati</h3>
-                <p>Penerangan jalan umum yang tidak berfungsi</p>
+                <div class="img-wrap"><img src="{{ asset('images/cat_lampu.png') }}" alt="Fasilitas Penerangan" class="cat-img"></div>
+                <div class="cat-body">
+                    <h3>Fasilitas Penerangan</h3>
+                    <p>Pengaduan lampu penerangan jalan umum (PJU) yang padam atau mengalami gangguan teknis.</p>
+                </div>
             </div>
             <div class="cat-card">
-                <div class="cat-icon ic-sampah"><i class="ti ti-trash"></i></div>
-                <h3>Sampah menumpuk</h3>
-                <p>Penumpukan sampah yang belum terangkut petugas</p>
+                <div class="img-wrap"><img src="{{ asset('images/cat_sampah.png') }}" alt="Kebersihan Lingkungan" class="cat-img"></div>
+                <div class="cat-body">
+                    <h3>Kebersihan Lingkungan</h3>
+                    <p>Informasi penumpukan sampah liar atau keterlambatan jadwal pengangkutan sampah warga.</p>
+                </div>
             </div>
             <div class="cat-card">
-                <div class="cat-icon ic-air"><i class="ti ti-droplet"></i></div>
-                <h3>Saluran air tersumbat</h3>
-                <p>Got atau drainase yang berisiko menyebabkan banjir</p>
+                <div class="img-wrap"><img src="{{ asset('images/cat_air.png') }}" alt="Drainase & Saluran" class="cat-img"></div>
+                <div class="cat-body">
+                    <h3>Drainase & Saluran</h3>
+                    <p>Laporan saluran air tersumbat, gorong-gorong rusak yang berpotensi menyebabkan genangan air.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -189,16 +138,7 @@
         </div>
     </div>
 
-    <div class="flow">
-        <h2>Ringkasan alur</h2>
-        <p class="sub">Empat langkah inti dari laporan hingga selesai ditangani</p>
-        <div class="flow-steps">
-            <div class="flow-step"><div class="flow-num">1</div><p>Warga daftar menggunakan NIK & Nomor KK</p></div>
-            <div class="flow-step"><div class="flow-num">2</div><p>Admin kelurahan memverifikasi data warga</p></div>
-            <div class="flow-step"><div class="flow-num">3</div><p>Warga mengirim laporan pengaduan</p></div>
-            <div class="flow-step"><div class="flow-num">4</div><p>Petugas menindaklanjuti & update status</p></div>
-        </div>
-    </div>
+
 
     <div class="foot">&copy; 2026 Pemerintah Kalurahan Sumberarum &mdash; Layanan Pengaduan Digital</div>
 </body>

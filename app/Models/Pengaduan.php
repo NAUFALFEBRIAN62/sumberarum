@@ -11,7 +11,7 @@ class Pengaduan extends Model
 
     protected $fillable = [
         'id_warga', 'id_petugas', 'judul', 'isi_pengaduan',
-        'kategori', 'lokasi', 'foto_bukti', 'tanggal_pengaduan', 'status',
+        'kategori', 'lokasi', 'foto_bukti', 'tanggal_pengaduan', 'status', 'catatan_admin',
     ];
 
     public function warga()
