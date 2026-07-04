@@ -11,10 +11,10 @@
 </head>
 <body class="layout-split">
     <div class="side-art">
-        <div class="brand">
+        <a href="{{ route('home') }}" class="brand">
             <img src="{{ asset('images/logo-kelurahan.jpg') }}" alt="Logo Sumberarum" class="brand-mark" style="object-fit: cover; background: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
             <div class="brand-text">E-Lapor Sumberarum<span>Kalurahan Sumberarum</span></div>
-        </div>
+        </a>
         <div>
             <h2>Layanan pengaduan warga, transparan dan cepat ditindaklanjuti</h2>
             <p>Masuk untuk membuat laporan baru atau memantau status pengaduan kamu.</p>

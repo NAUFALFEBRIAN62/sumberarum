@@ -11,10 +11,10 @@
 </head>
 <body class="layout-centered auth-bg">
     <div class="form-card admin-card">
-                <div class="brand" style="justify-content: center; margin-bottom: 24px; display: flex;">
+                <a href="{{ route('home') }}" class="brand" style="justify-content: center; margin-bottom: 24px; display: flex;">
             <img src="{{ asset('images/logo-kelurahan.jpg') }}" alt="Logo" class="brand-mark" style="object-fit: cover; background: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             <div class="brand-text" style="color: var(--navy-900);">E-Lapor Sumberarum<span style="color: #5B6478;">Kalurahan Sumberarum</span></div>
-        </div>
+        </a>
         <div class="header" style="text-align: center; margin-bottom: 24px;">
         <h1>Login petugas lapangan</h1>
         <p class="sub">Tindak lanjuti dan perbarui status pengaduan</p>

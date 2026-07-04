@@ -12,10 +12,10 @@
 <body>
 <div class="app-shell">
     <aside class="sidebar">
-        <div class="side-brand">
+        <a href="{{ route('home') }}" class="side-brand">
             <img src="{{ asset('images/logo-kelurahan.jpg') }}" alt="Logo Sumberarum" style="width: 36px; height: 36px; border-radius: 9px; object-fit: cover; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
             <div class="side-brand-text">E-Lapor Sumberarum<span>Kalurahan Sumberarum</span></div>
-        </div>
+        </a>
         <div class="side-user">
             <div class="side-user-avatar">@yield('user-initial')</div>
             <div>

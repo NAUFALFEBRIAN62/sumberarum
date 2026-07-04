@@ -11,10 +11,10 @@
 </head>
 <body class="bg-light">
     <div class="top-strip">
-        <div class="brand">
+        <a href="{{ route('home') }}" class="brand">
             <img src="{{ asset('images/logo-kelurahan.jpg') }}" alt="Logo Sumberarum" class="brand-mark" style="object-fit: cover; background: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
             <div class="brand-text">E-Lapor Sumberarum<span>Kalurahan Sumberarum</span></div>
-        </div>
+        </a>
     </div>
     <div class="wrap">
         <div class="form-card register-card">

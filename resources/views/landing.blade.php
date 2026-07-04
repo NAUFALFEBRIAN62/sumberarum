@@ -11,10 +11,10 @@
 </head>
 <body>
     <div class="nav">
-        <div class="brand">
+        <a href="{{ route('home') }}" class="brand">
             <img src="{{ asset('images/logo-kelurahan.jpg') }}" alt="Logo Sumberarum" style="width: 38px; height: 38px; border-radius: 9px; object-fit: cover; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
             <div class="brand-text">E-Lapor Sumberarum<span>Kalurahan Sumberarum</span></div>
-        </div>
+        </a>
         <div class="nav-links">
             <a href="{{ route('admin.login') }}" class="nav-btn">Admin</a>
             <a href="{{ route('petugas.login') }}" class="nav-btn">Petugas</a>
